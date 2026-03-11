@@ -92,5 +92,5 @@ export default defineConfig({
       '~': '/src',
     },
   },
-  base: 'https://stefpi.net/new-connect/',
+  base: '/new-connect/',
 })
