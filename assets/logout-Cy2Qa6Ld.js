@@ -1,0 +1,2 @@
+import{a as t,c as d,N as o}from"./index-DAOCVYiz.js";try{let e=typeof window<"u"?window:typeof global<"u"?global:typeof globalThis<"u"?globalThis:typeof self<"u"?self:{},n=new e.Error().stack;n&&(e._sentryDebugIds=e._sentryDebugIds||{},e._sentryDebugIds[n]="49e1a68f-63c8-4d56-843b-88e580e9f36d",e._sentryDebugIdIdentifier="sentry-dbid-49e1a68f-63c8-4d56-843b-88e580e9f36d")}catch{}function s(){return t(),d(o,{href:"/login"})}export{s as default};
+//# sourceMappingURL=logout-Cy2Qa6Ld.js.map
