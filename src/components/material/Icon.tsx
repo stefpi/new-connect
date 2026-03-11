@@ -9,6 +9,7 @@ export const Icons = [
   'file_copy', 'flag', 'info', 'keyboard_arrow_down', 'keyboard_arrow_up', 'local_fire_department', 'logout', 'menu', 'my_location',
   'open_in_new', 'payments', 'person', 'progress_activity', 'satellite_alt', 'search', 'settings', 'upload', 'videocam', 'refresh',
   'login', 'person_off', 'autorenew', 'close_small', 'pause', 'play_arrow', 'clear_all',
+  'sports_esports', 'battery_full', 'wifi', 'wifi_off', 'screen_rotation_alt',
 ] as const
 
 export type IconName = (typeof Icons)[number]
@@ -25,7 +26,7 @@ export type IconProps = {
  *
  * Note: Icon names <strong>must</strong> be added to the icons list in vite.config.ts.
  *
- * @see https://fonts.google.com/icons
+ * @see https://fonts.googlrosce.com/icons
  */
 const Icon: VoidComponent<IconProps> = (props) => {
   // size-20, 24 etc. defined in root.css

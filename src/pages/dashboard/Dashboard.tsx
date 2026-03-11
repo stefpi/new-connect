@@ -18,6 +18,7 @@ import IconButton from '~/components/material/IconButton'
 import TopAppBar from '~/components/material/TopAppBar'
 
 import DeviceList from './components/DeviceList'
+import BodyActivity from './activities/BodyActivity'
 import DeviceActivity from './activities/DeviceActivity'
 import RouteActivity from './activities/RouteActivity'
 import SettingsActivity from './activities/SettingsActivity'
@@ -75,15 +76,20 @@ const DashboardLayout: Component<{
   paneOne: JSXElement
   paneTwo: JSXElement
   paneTwoContent: boolean
+  fullWidthPaneTwo?: boolean
 }> = (props) => {
   return (
     <div class="relative size-full overflow-hidden">
       <div
         class={clsx(
-          'mx-auto size-full max-w-[1600px] md:grid md:grid-cols-2 lg:gap-2',
+          'mx-auto size-full max-w-[1600px]',
           // Flex layout for mobile with horizontal transition
           'flex transition-transform duration-300 ease-in-out',
-          props.paneTwoContent ? '-translate-x-full md:translate-x-0' : 'translate-x-0',
+          props.fullWidthPaneTwo
+            ? props.paneTwoContent
+              ? '-translate-x-full'
+              : 'translate-x-0'
+            : clsx('md:grid md:grid-cols-2 lg:gap-2', props.paneTwoContent ? '-translate-x-full md:translate-x-0' : 'translate-x-0'),
         )}
       >
         <div class="min-w-full overflow-y-scroll">{props.paneOne}</div>
@@ -164,6 +170,7 @@ const Dashboard: Component<RouteSectionProps> = () => {
         <Match when={urlState().dongleId} keyed>
           {(dongleId) => (
             <DashboardLayout
+              fullWidthPaneTwo={urlState().dateStr === 'body'}
               paneOne={<DeviceActivity dongleId={dongleId} />}
               paneTwo={
                 <Switch
@@ -175,6 +182,9 @@ const Dashboard: Component<RouteSectionProps> = () => {
                     </div>
                   }
                 >
+                  <Match when={urlState().dateStr === 'body'}>
+                    <BodyActivity dongleId={dongleId} />
+                  </Match>
                   <Match when={urlState().dateStr === 'settings' || urlState().dateStr === 'prime'}>
                     <SettingsActivity dongleId={dongleId} />
                   </Match>

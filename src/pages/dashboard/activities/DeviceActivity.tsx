@@ -102,6 +102,7 @@ const DeviceActivity: VoidComponent<DeviceActivityProps> = (props) => {
               </div>
             </Suspense>
             <div class="flex gap-4">
+              <IconButton name="sports_esports" href={`/${props.dongleId}/body`} />
               <IconButton name="camera" onClick={onClickSnapshot} />
               <IconButton name="settings" href={`/${props.dongleId}/settings`} />
             </div>
