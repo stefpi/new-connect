@@ -92,5 +92,5 @@ export default defineConfig({
       '~': '/src',
     },
   },
-  base: '/new-connect/',
+  base: '/',
 })
